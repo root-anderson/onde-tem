@@ -1,3 +1,4 @@
+import EditarPage from "./pages/EditarPage.jsx";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import MapaPage from "./pages/MapaPage.jsx";
@@ -13,6 +14,7 @@ export default function App() {
           <Route path="/" element={<MapaPage />} />
           <Route path="/cadastro" element={<CadastroPage />} />
           <Route path="/gerenciar" element={<GerenciarPage />} />
+          <Route path="/gerenciar/:id" element={<EditarPage />} />
         </Routes>
       </main>
     </div>
