@@ -1,3 +1,4 @@
+import { buscarEndereco } from "./controllers/geocode.controller.js";
 import estabelecimentosRoutes from "./routes/estabelecimentos.routes.js";
 import express from "express";
 import cors from "cors";
@@ -23,6 +24,8 @@ app.get("/api/health", async (req, res) => {
         res.status(500).json({ status: "erro", mensagem: "Falha ao conectar ao banco" });
     }
 });
+
+app.get("/api/geocode", buscarEndereco);
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
