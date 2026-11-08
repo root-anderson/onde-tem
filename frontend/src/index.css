@@ -109,3 +109,150 @@ body {
   height: 100%;
   width: 100%;
 }
+
+/* Layout do mapa: painel lateral + mapa */
+.mapa-layout {
+  display: flex;
+  height: 100%;
+}
+
+.mapa-area {
+  flex: 1;
+  position: relative;
+  min-height: 0;
+}
+
+.painel {
+  width: 320px;
+  flex-shrink: 0;
+  background: white;
+  border-right: 1px solid var(--cor-borda);
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.painel h2,
+.painel h3 {
+  margin: 0;
+}
+
+.painel h3 {
+  font-size: 0.95rem;
+}
+
+.grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.grupo label {
+  font-size: 0.9rem;
+}
+
+select {
+  padding: 8px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: white;
+}
+
+.botao {
+  background: var(--cor-primaria);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.botao:hover:not(:disabled) {
+  background: var(--cor-primaria-escura);
+}
+
+.botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.info {
+  font-size: 0.85rem;
+  color: #475569;
+  margin: 0;
+}
+
+.erro {
+  font-size: 0.85rem;
+  color: #b91c1c;
+  margin: 0;
+}
+
+.lista-resultados {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lista-resultados button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.lista-resultados button:hover {
+  background: var(--cor-fundo);
+}
+
+.lista-resultados small {
+  color: #475569;
+  white-space: nowrap;
+}
+
+/* Pinos das categorias */
+.pino {
+  background: none;
+  border: none;
+}
+
+.pino span {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+}
+
+/* Celular: painel embaixo do mapa */
+@media (max-width: 720px) {
+  .mapa-layout {
+    flex-direction: column-reverse;
+  }
+
+  .painel {
+    width: 100%;
+    max-height: 42%;
+    border-right: none;
+    border-top: 1px solid var(--cor-borda);
+  }
+}
