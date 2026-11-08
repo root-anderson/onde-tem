@@ -1,3 +1,4 @@
+import estabelecimentosRoutes from "./routes/estabelecimentos.routes.js";
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors({ origin: process.env.CORS_ORIGIN }));
 app.use(express.json());
+app.use("/api/estabelecimentos", estabelecimentosRoutes);
 
 // Rota de saúde: confirma que a API e o banco estão no ar
 app.get("/api/health", async (req, res) => {
